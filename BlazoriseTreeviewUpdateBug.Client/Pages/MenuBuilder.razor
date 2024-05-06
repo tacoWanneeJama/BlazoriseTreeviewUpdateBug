@@ -1,0 +1,69 @@
+﻿@using Blazorise.TreeView
+@page "/menubuilder"
+@rendermode InteractiveAuto
+<PageTitle>Beheer: MenuBuilder</PageTitle>
+
+<h3>MenuBuilder</h3>
+
+<Row>
+    <Column>
+        <TreeView @ref="_treeView"
+                  TNode="WsvanMenuRow"
+                  Nodes="_menuRows"
+                  GetChildNodes="@(item => item.Subrows)"
+                  HasChildNodes="@(item => item.Subrows?.Any() == true)"
+                  @bind-SelectedNode="selectedNode"
+                  @bind-ExpandedNodes="expandedNodes"
+                  NodeContextMenu="@OnNodeContextMenu"
+                  NodeContextMenuPreventDefault>
+            <NodeContent>
+                <Icon Name="IconName.Folder" />
+                @context.Label
+            </NodeContent>
+        </TreeView>
+    </Column>
+    <Column>
+
+    </Column>
+</Row>
+
+
+@if (showContextMenu)
+{
+    <Div Position="Position.Fixed" Background="Background.Danger" Style="@($"left:{contextMenuPosX}px; top:{contextMenuPosY}px;")">
+        <ListGroup>
+            <ListGroupItem>
+                <Strong>Node: @contextMenuNode?.Label</Strong>
+            </ListGroupItem>
+            <ListGroupItem Style="cursor: pointer;">
+                <Addons>
+                    <Addon AddonType="AddonType.Start">
+                        <Icon Name="IconName.Add" TextColor="TextColor.Secondary" />
+                    </Addon>
+                    <Addon AddonType="AddonType.Body">
+                        <TextEdit @bind-Text="_newRowName" />
+                    </Addon>
+                    <Addon AddonType="AddonType.End">
+                        <Button Clicked="@(()=>OnContextItemNewClicked(contextMenuNode))">Save</Button>
+                    </Addon>
+                </Addons>
+            </ListGroupItem>
+            <ListGroupItem Style="cursor: pointer;">
+                <Addons>
+                    <Addon AddonType="AddonType.Start">
+                        <Icon Name="IconName.Edit" TextColor="TextColor.Secondary" />
+                    </Addon>
+                    <Addon AddonType="AddonType.Body">
+                        <TextEdit @bind-Text="@contextMenuNode.Label" />
+                    </Addon>
+                    <Addon AddonType="AddonType.End">
+                        <Button Clicked="@(()=>OnContextItemEditClicked(contextMenuNode))">Save</Button>
+                    </Addon>
+                </Addons>
+            </ListGroupItem>
+            <ListGroupItem Clicked="@(()=>OnContextItemDeleteClicked(contextMenuNode))" Style="cursor: pointer;">
+                <Icon Name="IconName.Delete" TextColor="TextColor.Danger" /> Delete
+            </ListGroupItem>
+        </ListGroup>
+    </Div>
+}

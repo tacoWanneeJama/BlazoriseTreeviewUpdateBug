@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34825.169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoriseTreeviewUpdateBug", "BlazoriseTreeviewUpdateBug\BlazoriseTreeviewUpdateBug.csproj", "{CD882BC7-EABA-4884-8EC7-B228780F4CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoriseTreeviewUpdateBug.Client", "BlazoriseTreeviewUpdateBug.Client\BlazoriseTreeviewUpdateBug.Client.csproj", "{CCA484F3-F27C-4762-9B8A-115A952D5130}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD882BC7-EABA-4884-8EC7-B228780F4CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD882BC7-EABA-4884-8EC7-B228780F4CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD882BC7-EABA-4884-8EC7-B228780F4CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD882BC7-EABA-4884-8EC7-B228780F4CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA484F3-F27C-4762-9B8A-115A952D5130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA484F3-F27C-4762-9B8A-115A952D5130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA484F3-F27C-4762-9B8A-115A952D5130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA484F3-F27C-4762-9B8A-115A952D5130}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DC39BE0-E4CD-415C-8864-C76B2186C736}
+	EndGlobalSection
+EndGlobal
